@@ -12,3 +12,28 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const list = document.querySelector(".gallery")
+const imageGallery = images.map(({ url,alt})=> `<li class ="liEl">
+  <img src="${url}" alt="${alt}" class="image" 
+  >
+</li>
+` ).join("")
+list.insertAdjacentHTML("afterbegin", imageGallery)
+
+
+list.style.display = "flex"
+list.style.flexWrap = "wrap"
+
+const listEl = document.querySelectorAll(".liEl")
+listEl.forEach(element =>
+  element.style.width = "33.3%"
+  )
+const image = document.querySelectorAll(".image")
+image.forEach( img =>{
+  img.style.width = "100%"
+  img.style.height = "100%"
+  }
+  )
+
+
